@@ -2,3 +2,13 @@
 /venv/
 /.idea/
 *.pyc
+
+#
+/garbage/
+temp.py
+
+# private
+/config/config.py
+
+# spotipy
+.cache
