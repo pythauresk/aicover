@@ -3,10 +3,11 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
-from config.config import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
+# FIXME : add a way to get api keys without showing it
+from config.config import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET  # noqa
+
 
 credentials = SpotifyClientCredentials(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
-
 sp = spotipy.Spotify(client_credentials_manager=credentials)
 
 
@@ -15,6 +16,7 @@ class Playlist:
         """
         :param playlist_id: playlist id (end of a playlist url), str
         """
+        # TODO : verify playlist_id, correct it if necessary and del Playlist if there is a problem
         self.id = playlist_id
         self.playlist = None
         self.get_raw()
